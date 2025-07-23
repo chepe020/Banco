@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 const apiBanc = axios.create({
-    baseURL: "banc-production.up.railway.app/BancoSystem/v1",
+    baseURL: "https://banc-production.up.railway.app//BancoSystem/v1",
     timeout: 5000,
     headers: { "Cache-Control": "no-cache, no-store, must-revalidate" }
 })
