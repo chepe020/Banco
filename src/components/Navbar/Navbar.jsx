@@ -3,21 +3,20 @@ import {
   Flex,
   Text,
   Spacer,
-  Link as ChakraLink,
   Heading,
+  Link as ChakraLink,
   Image,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { href, Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
-const logoUrl =
-  "https://static.vecteezy.com/system/resources/previews/013/948/727/non_2x/bank-icon-logo-design-vector.jpg";
+const logoUrl = "https://static.vecteezy.com/system/resources/previews/013/948/727/non_2x/bank-icon-logo-design-vector.jpg";
 const userIconUrl = "https://cdn-icons-png.flaticon.com/512/456/456212.png";
 
 export const Navbar = () => {
   const [isAdmin, setIsAdmin] = useState(false);
-  const [typeAccount, setTypeAccount] = useState("")
+  const [typeAccount, setTypeAccount] = useState("");
   const [navigation, setNavigation] = useState([]);
 
   const navbarBg = useColorModeValue("gray.900", "gray.700"); 
@@ -28,33 +27,37 @@ export const Navbar = () => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
-      if(user.role === "ADMIN_ROLE"){
-        setIsAdmin(true)
+      if (user.role === "ADMIN_ROLE") {
+        setIsAdmin(true);
       }
-      setTypeAccount(user.typeAccount)
+      setTypeAccount(user.typeAccount);
     }
   }, []);
 
   useEffect(() => {
     if (isAdmin) {
-      const navigationAdmin = [
+      setNavigation([
         { name: "Cuentas", href: "/cuenta" },
         { name: "Facturas", href: "/bills" },
         { name: "Registrar", href: "/requests" },
-      ];
-      setNavigation(navigationAdmin);
-    } else {
-      const isBusiness = typeAccount === "EMPRESARIAL"
-      const navigationUser = [
+      ]);
+    } else if (typeAccount === "EMPRESARIAL") {
+      setNavigation([
         { name: "Mi Cuenta", href: "/cuenta" },
         { name: "Transferencia", href: "/tranferencia" },
         { name: "Compras", href: "/compras" },
-        ...(isBusiness ? [] : [{name: "Facturas", href: "/bills"}]),
         { name: "Favoritos", href: "/favorito" },
-      ];
-      setNavigation(navigationUser);
+      ]);
+    } else if (typeAccount === "NORMAL") {
+      setNavigation([
+        { name: "Mi Cuenta", href: "/cuenta" },
+        { name: "Transferencia", href: "/tranferencia" },
+        { name: "Compras", href: "/compras" },
+        { name: "Facturas", href: "/bills" },
+        { name: "Favoritos", href: "/favorito" },
+      ]);
     }
-  }, [isAdmin]);
+  }, [isAdmin, typeAccount]);
 
   return (
     <Box
