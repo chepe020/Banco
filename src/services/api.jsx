@@ -18,6 +18,7 @@ apiBanc.interceptors.request.use(
         return config;
     },
     (e) => Promise.reject(e)
+    
 )
 
 export const login = async (data) => {
