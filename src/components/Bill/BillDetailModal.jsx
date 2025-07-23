@@ -188,15 +188,6 @@ export const BillDetailModal = ({
           pb={4}
         >
           <Button
-            colorScheme={printButtonScheme}
-            mr={3}
-            onClick={handlePrint}
-            size="lg"
-            px={8}
-          >
-            Imprimir Factura
-          </Button>
-          <Button
             variant="ghost"
             onClick={onClose}
             colorScheme={closeButtonScheme}

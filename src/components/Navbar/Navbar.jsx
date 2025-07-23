@@ -19,10 +19,10 @@ export const Navbar = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [navigation, setNavigation] = useState([]);
 
-  const navbarBg = useColorModeValue("gray.900", "gray.700"); // Fondo oscuro para la navbar
-  const navbarColor = useColorModeValue("whiteAlpha.900", "whiteAlpha.900"); // Color del texto
-  const linkHoverColor = useColorModeValue("purple.300", "purple.200"); // Morado para hover
-  const linkUnderlineColor = useColorModeValue("purple.400", "purple.300"); // Morado para la línea
+  const navbarBg = useColorModeValue("gray.900", "gray.700"); 
+  const navbarColor = useColorModeValue("whiteAlpha.900", "whiteAlpha.900"); 
+  const linkHoverColor = useColorModeValue("purple.300", "purple.200"); 
+  const linkUnderlineColor = useColorModeValue("purple.400", "purple.300"); 
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
