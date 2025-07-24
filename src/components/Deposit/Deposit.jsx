@@ -9,7 +9,7 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react"
-import { useDeposito } from "../../hooks/depositos/useDeposito"
+import { useDeposito } from "../../shared/hooks/deposit/useDeposito"
 
 export const Deposit = () => {
   const [noAccount, setNoAccount] = useState("")
