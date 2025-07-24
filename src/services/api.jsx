@@ -329,3 +329,14 @@ export const deposiAdd = async (data) => {
         }
     }
 }
+
+export const deposiView = async() => {
+    try {
+       return await apiBanc.get('/deposito/getDepositos') 
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+}

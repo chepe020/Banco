@@ -79,7 +79,7 @@ export const Footer = () => {
                   }}
                   transition="color 0.2s ease-in-out"
                 >
-                  Política de Privacidad
+                  Kinal
                 </Link>
                 <Link
                   href="#terminos"
@@ -91,7 +91,7 @@ export const Footer = () => {
                   }}
                   transition="color 0.2s ease-in-out"
                 >
-                  Términos y Condiciones
+                  git
                 </Link>
                 <Link
                   href="#faq"
