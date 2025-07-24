@@ -40,6 +40,8 @@ export const Navbar = () => {
         { name: "Cuentas", href: "/cuenta" },
         { name: "Facturas", href: "/bills" },
         { name: "Registrar", href: "/requests" },
+        { name: "Deposito", href: "/deposito" },
+
       ]);
     } else if (typeAccount === "EMPRESARIAL") {
       setNavigation([

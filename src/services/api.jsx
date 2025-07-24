@@ -18,7 +18,7 @@ apiBanc.interceptors.request.use(
         return config;
     },
     (e) => Promise.reject(e)
-    
+
 )
 
 export const login = async (data) => {
@@ -133,7 +133,7 @@ export const getHistoryByUser = async (id) => {
         return {
             error: true,
             message: e.message,
-            stack: e.stack // opcional, útil para debug
+            stack: e.stack 
         };
     }
 }
@@ -311,6 +311,17 @@ export const updateStatusRequests = async (id, data) => {
 export const createAccountRequest = async (data) => {
     try {
         return await apiBanc.post('/accountRequest/account-request', data)
+    } catch (e) {
+        return{
+            error: true,
+            e
+        }
+    }
+}
+
+export const deposiAdd = async (data) => {
+    try {
+        return await apiBanc.post('/deposito/createDeposito', data)
     } catch (e) {
         return{
             error: true,

@@ -1,0 +1,1 @@
+export {useDeposito} from "./useDeposito.jsx"
